@@ -10,7 +10,7 @@ public class Main {
         CesaCrypt cesaCrypt = CesaCrypt.getInstance();
 
         String encrypt = cesaCrypt.encrypt("abcdefghijlmnopqrstuvxzywk", 3);
-        String decrypt = cesaCrypt.decrypt(encrypt, 13);
+        String decrypt = cesaCrypt.decrypt(encrypt, 3);
         System.out.println(decrypt);
     }
 }
