@@ -1,5 +1,6 @@
 package crypt;
 
+import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -22,7 +23,7 @@ public final class CesaCrypt {
         return new CesaCrypt();
     }
 
-    public String decrypt(final String msgEncrypt, final int numeroDecasas) {
+    public String decrypt(final String msgEncrypt, final int numeroDecasas) throws FileNotFoundException {
         StringBuilder builder = new StringBuilder();
         final char[] chars = msgEncrypt.toLowerCase().toCharArray();
 
@@ -38,7 +39,7 @@ public final class CesaCrypt {
                 builder.append(chars[i]);
             }
         }
-        String dec = builder.toString().toLowerCase();
+        String dec = builder.toString();
         createResumeSHA1(dec);
         return dec;
     }
