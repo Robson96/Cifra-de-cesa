@@ -1,18 +1,27 @@
 package file;
 
+import java.util.UUID;
+
 public class Json {
-    private int numero_de_casas;
+
+    public static String getBoundary() {
+        return boundary;
+    }
+
+    private transient static String boundary = UUID.randomUUID().toString();
+
+    private int numero_casas;
     private String token;
     private String cifrado;
     private String decifrado;
     private String resumo_criptografico;
 
     public int getNumeroDeCasas() {
-        return numero_de_casas;
+        return numero_casas;
     }
 
     public void setNumeroDeCasas(int numeroDeCasas) {
-        this.numero_de_casas = numeroDeCasas;
+        this.numero_casas = numeroDeCasas;
     }
 
     public String getToken() {
@@ -50,7 +59,7 @@ public class Json {
     @Override
     public String toString() {
         return "{" +
-                "numero_de_casas=" + numero_de_casas +
+                "numero_de_casas=" + numero_casas +
                 ", token='" + token + '\'' +
                 ", cifrado='" + cifrado + '\'' +
                 ", decifrado='" + decifrado + '\'' +

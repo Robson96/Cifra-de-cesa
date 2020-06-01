@@ -10,7 +10,7 @@ public final class FileUpdateUtil {
 
     private FileUpdateUtil() {}
 
-    public static String updateFile(String dec, String resume, int n) throws IOException {
+    public static void updateFile(String dec, String resume, int n) throws IOException {
         Gson gson = new Gson();
         FileReader reader = new FileReader("answer.json");
         Json json = gson.fromJson(reader, Json.class);
@@ -21,6 +21,5 @@ public final class FileUpdateUtil {
         PrintStream printStream = new PrintStream("answer.json");
         printStream.write(s.getBytes("UTF-8"));
         printStream.close();
-        return s;
     }
 }
